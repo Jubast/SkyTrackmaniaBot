@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hosts", "hosts", "{D4E4DB15-E017-49D9-BF4C-2B2B7648260C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6C084895-E6FB-4428-8715-0C7C46181F8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6667384C-BC7B-45E4-9791-C6A96E6802BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{EB85811E-F8E7-471F-BD36-642EDFAE2141}"
+ProjectSection(SolutionItems) = preProject
+	Directory.Build.props = Directory.Build.props
+	.gitignore = .gitignore
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyTrackmaniaBot.ConsoleHost", "hosts\SkyTrackmaniaBot.ConsoleHost\SkyTrackmaniaBot.ConsoleHost.csproj", "{A2D64FB0-C666-43E6-8D7D-E9F1F1C7793E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyTrackmaniaBot", "src\SkyTrackmaniaBot\SkyTrackmaniaBot.csproj", "{AAB42EB3-742A-4470-88FD-885031C7BD46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyTrackmaniaBot.Common", "src\SkyTrackmaniaBot.Common\SkyTrackmaniaBot.Common.csproj", "{F1A8FDB6-40F7-4819-9C7E-AA9954F16795}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyTrackmaniaBot.Tests", "tests\SkyTrackmaniaBot.Tests\SkyTrackmaniaBot.Tests.csproj", "{224B65C8-471A-46B1-AE7C-0B0A5A69F7D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2D64FB0-C666-43E6-8D7D-E9F1F1C7793E} = {D4E4DB15-E017-49D9-BF4C-2B2B7648260C}
+		{AAB42EB3-742A-4470-88FD-885031C7BD46} = {6C084895-E6FB-4428-8715-0C7C46181F8B}
+		{F1A8FDB6-40F7-4819-9C7E-AA9954F16795} = {6C084895-E6FB-4428-8715-0C7C46181F8B}
+		{224B65C8-471A-46B1-AE7C-0B0A5A69F7D8} = {6667384C-BC7B-45E4-9791-C6A96E6802BF}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2D64FB0-C666-43E6-8D7D-E9F1F1C7793E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D64FB0-C666-43E6-8D7D-E9F1F1C7793E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D64FB0-C666-43E6-8D7D-E9F1F1C7793E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D64FB0-C666-43E6-8D7D-E9F1F1C7793E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB42EB3-742A-4470-88FD-885031C7BD46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB42EB3-742A-4470-88FD-885031C7BD46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB42EB3-742A-4470-88FD-885031C7BD46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB42EB3-742A-4470-88FD-885031C7BD46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A8FDB6-40F7-4819-9C7E-AA9954F16795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A8FDB6-40F7-4819-9C7E-AA9954F16795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A8FDB6-40F7-4819-9C7E-AA9954F16795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A8FDB6-40F7-4819-9C7E-AA9954F16795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224B65C8-471A-46B1-AE7C-0B0A5A69F7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224B65C8-471A-46B1-AE7C-0B0A5A69F7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224B65C8-471A-46B1-AE7C-0B0A5A69F7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224B65C8-471A-46B1-AE7C-0B0A5A69F7D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="$(FluentAssertionsVersion)" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftTestSdkVersion)" />
+        <PackageReference Include="Moq" Version="4.14.5" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="$(SerilogLogging)" />
+        <PackageReference Include="xunit" Version="$(xUnitVersion)" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="$(xUnitVersion)" />
+        <PackageReference Include="Serilog.Sinks.XUnit" Version="$(xUnitSink)" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\SkyTrackmaniaBot\SkyTrackmaniaBot.csproj" />
+    </ItemGroup>
+
+</Project>

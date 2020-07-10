@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>$(LibraryTargetFramework)</TargetFramework>
+    </PropertyGroup>
+    
+    <ItemGroup>        
+        <PackageReference Include="DSharpPlus" Version="$(DSharpPlus)" />
+        <PackageReference Include="Validation" Version="$(Validation)" />
+    </ItemGroup>
+</Project>

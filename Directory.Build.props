@@ -1,0 +1,64 @@
+<Project>
+    <!-- Set the repository root into a variable -->
+    <PropertyGroup>
+        <SourceRoot>$(MSBuildThisFileDirectory)</SourceRoot>
+    </PropertyGroup>
+
+    <!-- Set common properties regarding assembly information and nuget packages -->
+    <PropertyGroup>
+        <Authors>Jubast, Darkenkade</Authors>
+        <Product>Blockade Online Backend</Product>
+        <RepositoryType>git</RepositoryType>
+        <IncludeSymbols>true</IncludeSymbols>
+        <IncludeSource>true</IncludeSource>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <!-- Common compile parameters -->
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <NoWarn>$(NoWarn);1591;2003</NoWarn>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <!-- We use full (Windows PDBs) until cross platform support for source link will get better -->
+        <DebugType>full</DebugType>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <HostTargetFramework>netcoreapp3.1</HostTargetFramework>
+        <LibraryTargetFramework>netstandard2.0</LibraryTargetFramework>
+    </PropertyGroup>
+
+    <!-- Shared Package Versions -->
+    <PropertyGroup>
+        <!-- Bot related packages -->
+        <DSharpPlus>3.2.3</DSharpPlus>
+        <Validation>2.4.22</Validation>        
+        <MicrosoftExtension>3.1.5</MicrosoftExtension>
+        
+        <!-- Logging related packages -->        
+        <SerilogSettings>3.1.0</SerilogSettings>
+        <SerilogLogging>3.0.1</SerilogLogging>
+        <SerilogLoggingFile>4.1.0</SerilogLoggingFile>
+        <SerilogLoggingConsole>3.1.1</SerilogLoggingConsole>
+        <xUnitSink>2.0.4</xUnitSink>
+
+        <!-- Test related packages -->
+        <FluentAssertionsVersion>5.10.3</FluentAssertionsVersion>
+        <MicrosoftTestSdkVersion>16.5.0</MicrosoftTestSdkVersion>
+        <xUnitVersion>2.4.1</xUnitVersion>
+        <CoverletCodeCoveregeVersion>2.9.0</CoverletCodeCoveregeVersion>
+    </PropertyGroup>
+
+    <!-- Versioning properties -->
+    <PropertyGroup>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <VersionPrefix Condition=" '$(VersionPrefix)'=='' ">1.0.0</VersionPrefix>
+    </PropertyGroup>
+
+    <!-- For Debug builds generated a date/time dependent version suffix -->
+    <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
+        <VersionSuffix Condition=" '$(VersionSuffix)'=='' ">dev</VersionSuffix>
+        <VersionSuffix Condition=" '$(VersionDateSuffix)'!='' ">$(VersionSuffix)-$(VersionDateSuffix)</VersionSuffix>
+    </PropertyGroup>
+</Project>
