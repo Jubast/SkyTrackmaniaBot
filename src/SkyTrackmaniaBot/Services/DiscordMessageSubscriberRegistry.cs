@@ -44,7 +44,11 @@ namespace SkyTrackmaniaBot.Services
             var commandAttribute = type.GetCustomAttribute<CommandSubscriptionAttribute>(false);
             if (commandAttribute != null)
             {
-                _messageBus.Subscribe(commandAttribute.Prefix, MessageBusSubscriberType.Regex, CreateCallback<TSubscriber>());
+                if(commandAttribute.Command != null)
+                    _messageBus.Subscribe(commandAttribute.Command, MessageBusSubscriberType.Text, CreateCallback<TSubscriber>());
+                
+                if(commandAttribute.Prefix != null)
+                    _messageBus.Subscribe(commandAttribute.Prefix, MessageBusSubscriberType.StartsWith, CreateCallback<TSubscriber>());
             }
         }
 

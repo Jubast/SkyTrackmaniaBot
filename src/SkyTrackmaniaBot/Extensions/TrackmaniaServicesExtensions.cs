@@ -25,6 +25,8 @@ namespace SkyTrackmaniaBot.Extensions
                 registry.AddSubscriber<TM2InfoHandler>();
                 registry.AddSubscriber<TM2020InfoHandler>();
                 
+                registry.AddSubscriber<GithubInfoHandler>();
+
                 return registry;
             });
 

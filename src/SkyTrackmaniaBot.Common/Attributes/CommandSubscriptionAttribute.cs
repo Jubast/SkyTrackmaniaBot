@@ -1,16 +1,18 @@
+#nullable enable
 using System;
-using Validation;
 
 namespace SkyTrackmaniaBot.Common.Attributes
 {
     public class CommandSubscriptionAttribute : Attribute
     {
-        public CommandSubscriptionAttribute(string prefix)
+        public CommandSubscriptionAttribute(string? command = null, string? prefix = null)
         {
-            Requires.NotNull(prefix, nameof(prefix));
+            Command = command;
             Prefix = prefix;
         }
 
-        public string Prefix { get; }
+        public string? Command { get; }
+
+        public string? Prefix { get; }
     }
 }

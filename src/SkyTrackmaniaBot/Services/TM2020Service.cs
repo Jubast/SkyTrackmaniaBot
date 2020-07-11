@@ -33,7 +33,7 @@ namespace SkyTrackmaniaBot.Services
         {
             var trackInfo = new TrackInfo();
             trackInfo.TrackUrl = $"https://trackmania.exchange/tracks/view/{tmxId}";
-            trackInfo.TrackImageUrl = $"https://trackmania.exchange/maps/screenshot/normal/{tmxId}";
+            trackInfo.TrackImageUrl = $"https://trackmania.exchange/tracks/thumbnail/{tmxId}";
             trackInfo.TrackAuthor = info.Username;
             trackInfo.TrackName = info.Name;
             trackInfo.TrackLength = info.LengthName;
