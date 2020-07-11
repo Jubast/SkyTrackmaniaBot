@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{EB8581
 ProjectSection(SolutionItems) = preProject
 	Directory.Build.props = Directory.Build.props
 	.gitignore = .gitignore
+	nuget.config = nuget.config
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyTrackmaniaBot.ConsoleHost", "hosts\SkyTrackmaniaBot.ConsoleHost\SkyTrackmaniaBot.ConsoleHost.csproj", "{A2D64FB0-C666-43E6-8D7D-E9F1F1C7793E}"

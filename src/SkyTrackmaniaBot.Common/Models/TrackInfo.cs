@@ -12,7 +12,6 @@ namespace SkyTrackmaniaBot.Common.Models
         public string TrackLength { get; set; }
         public string TrackUrl { get; set; }
         public string TrackImageUrl { get; set; }
-        public string TrackThumbnailUrl { get; set; }
         public List<RecordInfo> RecordInfos { get; set; }
     }
 }

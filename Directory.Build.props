@@ -32,7 +32,7 @@
     <!-- Shared Package Versions -->
     <PropertyGroup>
         <!-- Bot related packages -->
-        <DSharpPlus>3.2.3</DSharpPlus>
+        <DSharpPlus>4.0.0-nightly-00709</DSharpPlus>
         <Validation>2.4.22</Validation>        
         <MicrosoftExtension>3.1.5</MicrosoftExtension>
         

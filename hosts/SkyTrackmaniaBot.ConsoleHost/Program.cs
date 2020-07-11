@@ -34,6 +34,7 @@ namespace SkyTrackmaniaBot.ConsoleHost
 
             var registry = services.GetService<IDiscordMessageSubscriberRegistry>();
             registry.AddSubscriber<TMNFInfoHandler>();
+            registry.AddSubscriber<TM2InfoHandler>();
             
             var client = services.GetService<DiscordClient>();
             var messageHandler = services.GetService<IDiscordMessageHandler>();

@@ -14,6 +14,7 @@ namespace SkyTrackmaniaBot.Extensions
             Requires.NotNull(collection, nameof(collection));
 
             collection.AddHttpClient<ITMNFService, TMNFService>(ConfigureHttpClient);
+            collection.AddHttpClient<ITM2Service, TM2Service>(ConfigureHttpClient);
             return collection;
         }
 

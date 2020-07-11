@@ -25,6 +25,9 @@ namespace SkyTrackmaniaBot
 
         public Task OnMessageCreated(MessageCreateEventArgs e)
         {
+            if (e.Author.IsBot)
+                return Task.CompletedTask;
+            
             var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
             return _subscriberRegistry.PublishMessageCreated(e, cts.Token);
         }
