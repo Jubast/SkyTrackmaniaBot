@@ -30,14 +30,16 @@ namespace SkyTrackmaniaBot.CommandHandlers
             if (!_match.Success)
                 return;
 
-            // Remove auto embed for TM2020 Url
-            await messageCreated.Message.ModifyEmbedSuppressionAsync(true);
-
             var tmxId = _match.Groups[1].Value;
             var trackInfo = await _tm2020Service.GetTrackInformation(tmxId, cancellationToken);
             var embededMessage = DiscordEmbedHelper.CreateEmbedForTrackInfo(trackInfo);
 
             await messageCreated.Message.RespondAsync(null, false, embededMessage);
+            
+            await Task.Delay(500, cancellationToken);
+            
+            // Remove auto embed for TM2020 Url
+            await messageCreated.Message.ModifyEmbedSuppressionAsync(true);
         }
     }
 }
