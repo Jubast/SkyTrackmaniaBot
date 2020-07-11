@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 using DSharpPlus;
 using Microsoft.Extensions.Configuration;
@@ -27,15 +26,11 @@ namespace SkyTrackmaniaBot.ConsoleHost
 
             var services = new ServiceCollection()
                 .AddLogging(builder => builder.AddSerilog(logger))
+                .AddTrackmaniaServices()
                 .AddDiscordClient(config.GetSection("DSharpPlus").Bind!)
                 .AddDiscordClientMessageHandlers()
-                .AddTrackmaniaServices()
                 .BuildServiceProvider();
 
-            var registry = services.GetService<IDiscordMessageSubscriberRegistry>();
-            registry.AddSubscriber<TMNFInfoHandler>();
-            registry.AddSubscriber<TM2InfoHandler>();
-            
             var client = services.GetService<DiscordClient>();
             var messageHandler = services.GetService<IDiscordMessageHandler>();
 

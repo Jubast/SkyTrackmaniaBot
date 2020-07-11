@@ -23,11 +23,11 @@ namespace SkyTrackmaniaBot.Extensions
         public static IServiceCollection AddDiscordClientMessageHandlers(this IServiceCollection collection)
         {
             Requires.NotNull(collection, nameof(collection));
+            Requires.That(collection.Any(x => x.ServiceType == typeof(IDiscordMessageSubscriberRegistry)), nameof(IDiscordMessageSubscriberRegistry), "IDiscordMessageSubscriberRegistry must be registered!");
             Requires.That(collection.Any(x => x.ServiceType == typeof(DiscordConfiguration)), nameof(DiscordConfiguration), "DiscordConfiguration must be registered!");
             Requires.That(collection.Any(x => x.ServiceType == typeof(DiscordClient)), nameof(DiscordClient), "DiscordClient must be registered!");
 
             collection.AddSingleton<IDiscordMessageHandler, DiscordMessageHandler>();
-            collection.AddSingleton<IDiscordMessageSubscriberRegistry, DiscordMessageSubscriberRegistry>();
             return collection;
         }
 

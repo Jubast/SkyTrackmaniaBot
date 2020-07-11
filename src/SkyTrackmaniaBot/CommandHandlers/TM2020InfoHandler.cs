@@ -9,19 +9,19 @@ using Validation;
 
 namespace SkyTrackmaniaBot.CommandHandlers
 {
-    [RegexSubscription("https://tmnforever\\.tm-exchange\\.com/main\\.aspx\\?action=trackshow&id=(\\d+)")]
-    public class TMNFInfoHandler : IDiscordMessageSubscriber
+    [RegexSubscription("https://trackmania\\.exchange/tracks/view/(\\d+)")]
+    public class TM2020InfoHandler : IDiscordMessageSubscriber
     {
         private readonly Match _match;
-        private readonly ITMNFService _tmnfService;
+        private readonly ITM2020Service _tm2020Service;
 
-        public TMNFInfoHandler(Match match, ITMNFService tmnfService)
+        public TM2020InfoHandler(Match match, ITM2020Service tm2020Service)
         {
             Requires.NotNull(match, nameof(match));
-            Requires.NotNull(tmnfService, nameof(tmnfService));
+            Requires.NotNull(tm2020Service, nameof(tm2020Service));
 
             _match = match;
-            _tmnfService = tmnfService;
+            _tm2020Service = tm2020Service;
         }
 
         public async Task OnMessageCreated(MessageCreateEventArgs messageCreated,
@@ -30,8 +30,11 @@ namespace SkyTrackmaniaBot.CommandHandlers
             if (!_match.Success)
                 return;
 
+            // Remove auto embed for TM2020 Url
+            await messageCreated.Message.ModifyEmbedSuppressionAsync(true);
+
             var tmxId = _match.Groups[1].Value;
-            var trackInfo = await _tmnfService.GetTrackInformation(tmxId, cancellationToken);
+            var trackInfo = await _tm2020Service.GetTrackInformation(tmxId, cancellationToken);
             var embededMessage = DiscordEmbedHelper.CreateEmbedForTrackInfo(trackInfo);
 
             await messageCreated.Message.RespondAsync(null, false, embededMessage);
