@@ -6,8 +6,8 @@
 
     <!-- Set common properties regarding assembly information and nuget packages -->
     <PropertyGroup>
-        <Authors>Jubast, Darkenkade</Authors>
-        <Product>Blockade Online Backend</Product>
+        <Authors>Jubast</Authors>
+        <Product>Trackmania Discord Bot</Product>
         <RepositoryType>git</RepositoryType>
         <IncludeSymbols>true</IncludeSymbols>
         <IncludeSource>true</IncludeSource>
